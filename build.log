@@ -1,0 +1,14 @@
+scons: Reading SConscript files ...
+'E:\RT_Thread_env_tool\tools\ConEmu\ConEmu\..\..\..\tools\gnu_gcc\arm_gcc\mingw\bin\riscv-none-embed-gcc' is not recognized as an internal or external command,
+operable program or batch file.
+
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: building associated VariantDir targets: build
+CC build\applications\main.o
+Error in calling command:riscv-none-embed-gcc
+Exception: No such file or directory
+
+Please check Toolchains PATH setting.
+
+scons: building terminated because of errors.

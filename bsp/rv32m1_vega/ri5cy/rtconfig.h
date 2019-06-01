@@ -39,7 +39,7 @@
 #define RT_USING_CONSOLE
 #define RT_CONSOLEBUF_SIZE 128
 #define RT_CONSOLE_DEVICE_NAME "uart0"
-#define RT_VER_NUM 0x40000
+#define RT_VER_NUM 0x40002
 #define ARCH_RISCV
 
 /* RT-Thread Components */
@@ -94,8 +94,13 @@
 #define RT_USING_DEVICE_IPC
 #define RT_PIPE_BUFSZ 512
 #define RT_USING_SERIAL
+#define RT_SERIAL_USING_DMA
+#define RT_SERIAL_RB_BUFSZ 64
 #define RT_USING_PIN
 #define RT_USING_RTC
+
+/* Using Hardware Crypto drivers */
+
 
 /* Using WiFi */
 
@@ -111,6 +116,9 @@
 /* Network */
 
 /* Socket abstraction layer */
+
+
+/* Network interface device */
 
 
 /* light weight TCP/IP stack */
@@ -141,7 +149,6 @@
 #define ULOG_OUTPUT_LEVEL
 #define ULOG_OUTPUT_TAG
 #define ULOG_BACKEND_USING_CONSOLE
-#define ULOG_SW_VERSION_NUM 0x00101
 
 /* RT-Thread online packages */
 
@@ -164,25 +171,6 @@
 
 /* language packages */
 
-#define PKG_USING_MICROPYTHON
-
-/* Hardware Module */
-
-#define MICROPYTHON_USING_MACHINE_UART
-
-/* System Module */
-
-#define MICROPYTHON_USING_UOS
-#define MICROPYTHON_USING_THREAD
-
-/* Tools Module */
-
-#define MICROPYTHON_USING_UJSON
-
-/* Network Module */
-
-#define PKG_MICROPYTHON_HEAP_SIZE 8192
-#define PKG_USING_MICROPYTHON_LATEST_VERSION
 
 /* multimedia packages */
 
@@ -199,18 +187,7 @@
 /* miscellaneous packages */
 
 
-/* sample package */
-
 /* samples: kernel and components samples */
-
-
-/* example package: hello */
-
-
-/* Privated Packages of RealThread */
-
-
-/* Network Utilities */
 
 #define SOC_VEGA_RI5CY
 #define BOARD_X_FRDM_VEGA

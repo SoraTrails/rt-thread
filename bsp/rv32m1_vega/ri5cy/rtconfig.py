@@ -15,7 +15,7 @@ if os.getenv('RTT_CC'):
 
 if  CROSS_TOOL == 'gcc':
     PLATFORM    = 'gcc'
-    EXEC_PATH   = r'/opt/unknown-gcc/bin'
+    EXEC_PATH   = r'E:\\RT_Thread_env_tool\\tools\\gnu_gcc\\riscv_gcc\\bin'
 else:
     print('Please make sure your toolchains is GNU GCC!')
     exit(0)
@@ -38,8 +38,8 @@ if PLATFORM == 'gcc':
     OBJDUMP = PREFIX + 'objdump'
     OBJCPY  = PREFIX + 'objcopy'
 
-    DEVICE  = ' -march=rv32imc -mabi=ilp32'
-    CFLAGS  = DEVICE + ' -fno-builtin -fno-exceptions -ffunction-sections'
+    DEVICE  = ' -march=rv32i -mabi=ilp32'
+    CFLAGS  = DEVICE + ' -DHAVE_SIGVAL -DHAVE_SIGINFO -DHAVE_SIGEVENT -fno-builtin -fno-exceptions -ffunction-sections'
     AFLAGS  = ' -c' + DEVICE + ' -x assembler-with-cpp'
     LFLAGS  = DEVICE + ' -nostartfiles -Wl,--gc-sections,-Map=rtthread.map,-cref,-u,Reset_Handler -T link.lds'
     CPATH   = ''
